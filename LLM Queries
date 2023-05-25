@@ -1,0 +1,23 @@
+1. Query: Retrieve the subject of the email sent by Emily Thompson on May 10, 2022.
+   Example Answer: "Project Update"
+
+2. Query: Provide a summary of the contract agreement email sent by Mark Johnson on May 12, 2022.
+   Example Answer: "Mark Johnson sent an email to the legal department attaching the final version of the contract for review and approval."
+
+3. Query: Identify the sender and recipients of the email discussing the urgent Request for Proposal (RFP).
+   Example Answer: Sender: Jennifer Anderson; Recipients: Sales Team (multiple recipients)
+
+4. Query: Retrieve the date and time of the team lunch email sent by David Martinez.
+   Example Answer: Date: June 7, 2022; Time: 1:00 PM
+
+5. Query: Find the email requesting IT support sent by Sarah Wilson.
+   Example Answer: "Sarah Wilson sent an email to the IT Helpdesk seeking assistance with technical issues on her laptop."
+
+6. Query: Retrieve the deadline mentioned in the training workshop registration email.
+   Example Answer: "The email states that the registration form should be submitted by the end of this week."
+
+7. Query: Identify the sender and recipient of the vacation request email.
+   Example Answer: Sender: Michael Johnson; Recipient: Manager
+
+8. Query: Find the confirmation of conference attendance email and extract the date of the conference.
+   Example Answer: "Emily Thompson confirms her attendance at the upcoming marketing conference scheduled for September 10th and 11th."
