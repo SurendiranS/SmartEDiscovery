@@ -8,44 +8,43 @@ import string
 import sys
 from typing import Dict
 from typing import List
-import requests
 import httpx
-from prompt_toolkit import prompt
-from prompt_toolkit import PromptSession
-from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
-from prompt_toolkit.completion import WordCompleter
-from prompt_toolkit.history import InMemoryHistory
-from prompt_toolkit.key_binding import KeyBindings
-from rich.console import Console
-from rich.markdown import Markdown
+#from prompt_toolkit import prompt
+#from prompt_toolkit import PromptSession
+#from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
+#from prompt_toolkit.completion import WordCompleter
+#from prompt_toolkit.history import InMemoryHistory
+#from prompt_toolkit.key_binding import KeyBindings
+# from rich.console import Console
+# from rich.markdown import Markdown
 
 
-def __create_session() -> PromptSession:
-    return PromptSession(history=InMemoryHistory())
+# def __create_session() -> PromptSession:
+#     return PromptSession(history=InMemoryHistory())
 
 
-def __create_completer(commands: list, pattern_str: str = "$") -> WordCompleter:
-    return WordCompleter(words=commands, pattern=re.compile(pattern_str))
+# def __create_completer(commands: list, pattern_str: str = "$") -> WordCompleter:
+#     return WordCompleter(words=commands, pattern=re.compile(pattern_str))
 
 
-def __get_input(
-    prompt_sess: PromptSession = None,
-    completer: WordCompleter = None,
-    key_bindings: KeyBindings = None,
-) -> str:
-    """
-    Multiline input function.
-    """
-    return (
-        prompt_sess.prompt(
-            completer=completer,
-            multiline=True,
-            auto_suggest=AutoSuggestFromHistory(),
-            key_bindings=key_bindings,
-        )
-        if prompt_sess
-        else prompt(multiline=True)
-    )
+# def __get_input(
+#     prompt_sess: PromptSession = None,
+#     completer: WordCompleter = None,
+#     key_bindings: KeyBindings = None,
+# ) -> str:
+    # """
+    # Multiline input function.
+    # """
+    # return (
+    #     prompt_sess.prompt(
+    #         completer=completer,
+    #         multiline=True,
+    #         auto_suggest=AutoSuggestFromHistory(),
+    #         key_bindings=key_bindings,
+    #     )
+    #     if prompt_sess
+    #     else prompt(multiline=True)
+    # )
 
 
 class Chatbot:
@@ -258,57 +257,57 @@ class AsyncChatbot:
         return results
 
 
-if __name__ == "__main__":
-    print(
-        """
-        Bard - A command-line interface to Google's Bard (https://bard.google.com/)
-        Repo: github.com/acheong08/Bard
+# if __name__ == "__main__":
+#     print(
+#         """
+#         Bard - A command-line interface to Google's Bard (https://bard.google.com/)
+#         Repo: github.com/acheong08/Bard
 
-        Enter `alt+enter` or `esc+enter` to send a message.
-        """,
-    )
-    console = Console()
-    if os.getenv("BARD_QUICK"):
-        session = os.getenv("BARD_SESSION")
-        if not session:
-            print("BARD_SESSION environment variable not set.")
-            sys.exit(1)
-        chatbot = Chatbot(session)
-        # Join arguments into a single string
-        MESSAGE = " ".join(sys.argv[1:])
-        response = chatbot.ask(MESSAGE)
-        console.print(Markdown(response["content"]))
-        console.print(response["images"] if response["images"] else "")
-        sys.exit(0)
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--session",
-        help="__Secure-1PSID cookie.",
-        type=str,
-        required=True,
-    )
-    args = parser.parse_args()
+#         Enter `alt+enter` or `esc+enter` to send a message.
+#         """,
+#     )
+    # console = Console()
+    # if os.getenv("BARD_QUICK"):
+    #     session = os.getenv("BARD_SESSION")
+    #     if not session:
+    #         print("BARD_SESSION environment variable not set.")
+    #         sys.exit(1)
+    #     chatbot = Chatbot(session)
+    #     # Join arguments into a single string
+    #     MESSAGE = " ".join(sys.argv[1:])
+    #     response = chatbot.ask(MESSAGE)
+    #     console.print(Markdown(response["content"]))
+    #     console.print(response["images"] if response["images"] else "")
+    #     sys.exit(0)
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument(
+    #     "--session",
+    #     help="__Secure-1PSID cookie.",
+    #     type=str,
+    #     required=True,
+    # )
+    # args = parser.parse_args()
 
-    chatbot = Chatbot(args.session)
-    prompt_session = __create_session()
-    completions = __create_completer(["!exit", "!reset"])
+    # chatbot = Chatbot(args.session)
+    # prompt_session = __create_session()
+    # completions = __create_completer(["!exit", "!reset"])
 
-    try:
-        while True:
-            console.print("You:")
-            user_prompt = __get_input(prompt_sess=prompt_session, completer=completions)
-            console.print()
-            if user_prompt == "!exit":
-                break
-            elif user_prompt == "!reset":
-                chatbot.conversation_id = ""
-                chatbot.response_id = ""
-                chatbot.choice_id = ""
-                continue
-            print("Google Bard:")
-            response = chatbot.ask(user_prompt)
-            console.print(Markdown(response["content"]))
-            console.print(response["images"] if response["images"] else "")
-            print()
-    except KeyboardInterrupt:
-        print("Exiting...")
+    # try:
+    #     while True:
+    #         console.print("You:")
+    #         user_prompt = __get_input(prompt_sess=prompt_session, completer=completions)
+    #         console.print()
+    #         if user_prompt == "!exit":
+    #             break
+    #         elif user_prompt == "!reset":
+    #             chatbot.conversation_id = ""
+    #             chatbot.response_id = ""
+    #             chatbot.choice_id = ""
+    #             continue
+    #         print("Google Bard:")
+    #         response = chatbot.ask(user_prompt)
+    #         console.print(Markdown(response["content"]))
+    #         console.print(response["images"] if response["images"] else "")
+    #         print()
+    # except KeyboardInterrupt:
+    #     print("Exiting...")
