@@ -18,11 +18,12 @@ Cookie value subject to frequent changes. Verify the value again if an error occ
 * python-docx
 * httpx
 
-
-
-
-
 ## Running the Code
+To install the requirements for this project, run the following command:
+```bash
+$ pip install -r requirements.txt
+```
+To use this project, run the [discover.py](https://github.com/SurendiranS/SmartEDiscovery/blob/main/src/discover.py) script 
 ```bash
 $ python3 /src/discover.py
 ```
