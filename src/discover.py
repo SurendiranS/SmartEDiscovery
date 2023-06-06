@@ -30,7 +30,7 @@ def extract_text_from_docx(docx_file):
   return text
 
 
-def discover(Secure1PSID, directory = ".\SmartEDiscovery-main\EIS"):
+def discover(Secure1PSID, directory = "SmartEDiscovery-main\SmartEDiscovery-main\EIS"):
   from Bard import Chatbot
   chatbot = Chatbot(Secure1PSID)
   files = discover_files(directory)
@@ -51,7 +51,7 @@ def discover(Secure1PSID, directory = ".\SmartEDiscovery-main\EIS"):
     #print(res["content"])
 
   while(1):
-    n=input("\nQuestion : ")
+    n=input("\nQuestion (Type '!exit' to quit) : ")
     if(n=='!exit'):
       break
     else:
@@ -61,5 +61,6 @@ def discover(Secure1PSID, directory = ".\SmartEDiscovery-main\EIS"):
 
 if __name__ == "__main__":
   Secure1PSID=input("Enter the Secure1PSID : ")
-  directory = input("Enter the Directory : ")
-  discover(Secure1PSID)
+  directory = input("Enter the Directory (default : SmartEDiscovery-main\SmartEDiscovery-main\EIS ) : ")
+  discover(Secure1PSID, directory)
+
