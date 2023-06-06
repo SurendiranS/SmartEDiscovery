@@ -26,4 +26,5 @@ Cookie value subject to frequent changes. Verify the value again if an error occ
 ```bash
 $ python3 /src/discover.py
 ```
-![Screenshot 2023-06-06 121538](https://github.com/SurendiranS/SmartEDiscovery/assets/43315429/2f290cf1-63a1-4dca-a881-bfdb2160040c)
+
+![Screenshot 2023-06-06 121538](https://github.com/SurendiranS/SmartEDiscovery/assets/43315429/0eaf8ae1-a57f-481f-856b-aa1118b6893b)
