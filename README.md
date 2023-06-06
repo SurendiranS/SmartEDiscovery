@@ -2,7 +2,7 @@
 
 ## Description
 
-This a demostration of the use of LLM's for the purpose of E-discovery in Cyber-forensic.  This Project uses the Reverse engineered Google BARD API  by [acheong08/Bard](github.com/acheong08/Bard). 
+This a demostration of the use of LLM's for the purpose of E-discovery in Cyber-forensic.  This Project uses the Reverse engineered Google BARD API  by https://github.com/acheong08/Bard.
 
 ## Authentication
 > **Warning** Do not expose the `__Secure-1PSID` 
@@ -12,7 +12,18 @@ This a demostration of the use of LLM's for the purpose of E-discovery in Cyber-
 
 Note that while I referred to `__Secure-1PSID` value as an API key for convenience, it is not an officially provided API key. 
 Cookie value subject to frequent changes. Verify the value again if an error occurs. Most errors occur when an invalid cookie value is entered.
-
 <br>
 
+## Dependencies
+* python-docx
+* httpx
 
+
+
+
+
+## Running the Code
+```bash
+$ python3 /src/discover.py
+```
+![Screenshot 2023-06-06 121538](https://github.com/SurendiranS/SmartEDiscovery/assets/43315429/2f290cf1-63a1-4dca-a881-bfdb2160040c)
